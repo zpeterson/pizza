@@ -11,8 +11,8 @@ export const styles = css`
 
 .circle {
   position: relative;
-  width: 200px;
-  height: 200px;
+  width: 400px;
+  height: 400px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -21,8 +21,8 @@ export const styles = css`
 
 .logo {
   position: absolute;
-  width: 150px;
-  height: 150px;
+  width: 350px;
+  height: 350px;
   background: url(assets/fluent_food_pizza_24_regular.svg);
   background-size: cover;
   border-radius: 50%;
@@ -48,7 +48,7 @@ export const styles = css`
   position: absolute;
   left: 50%;
   font-size: 20px;
-  transform-origin: 0 100px;
+  transform-origin: 0 200px;
 }
 
 `;
