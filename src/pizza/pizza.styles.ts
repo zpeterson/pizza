@@ -1,5 +1,20 @@
 import { css } from '@microsoft/fast-element';
 
+const animation = css`
+.animate {
+    animation: rotateText 10s linear infinite;
+}
+
+@keyframes rotateText {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg)
+  }
+}
+`;
+
 export const styles = css`
 
 .pizza-container {
@@ -32,17 +47,8 @@ export const styles = css`
   position: absolute;
   width: 100%;
   height: 100%;
-  animation: rotateText 10s linear infinite;
 }
 
-@keyframes rotateText {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg)
-  }
-}
 
 .text span {
   position: absolute;
@@ -51,4 +57,5 @@ export const styles = css`
   transform-origin: 0 200px;
 }
 
+${animation}
 `;

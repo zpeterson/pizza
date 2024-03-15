@@ -13,6 +13,8 @@ export class Pizza extends FASTElement {
 
     @attr lang: 'en' | 'fr' | 'es' | 'ar' = 'en';
 
+    @attr animated = true;
+
     connectedCallback() {
         super.connectedCallback();
         this.addSpans();
@@ -26,6 +28,10 @@ export class Pizza extends FASTElement {
             span.textContent = char;
             this.text?.appendChild(span);
         }
+    }
+
+    animationClick() {
+        this.animated = !this.animated;
     }
 
     get degrees() {
