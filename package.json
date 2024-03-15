@@ -17,8 +17,11 @@
   },
   "dependencies": {
     "@microsoft/fast-components": "^2.30.6",
-    "@microsoft/fast-element": "^1.12.0",
-    "@microsoft/fast-foundation": "^2.49.5"
+    "@microsoft/fast-element": "^2.0.0-beta.4",
+    "@microsoft/fast-foundation": "^3.0.0-alpha.9",
+    "i18next": "^23.10.1",
+    "i18next-browser-languagedetector": "^7.2.0",
+    "i18next-http-backend": "^2.5.0"
   },
   "devDependencies": {
     "typescript": "^4.5.4",
