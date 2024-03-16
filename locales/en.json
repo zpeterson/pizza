@@ -1,3 +1,16 @@
 {
-  "zoeLovesPizza": "zoë loves pizza"
+  "zoeLovesPizza": "zoë loves pizza",
+  "luminance": {
+    "lightMode": "Light mode",
+    "darkMode": "Dark mode",
+    "selectLuminance": "Select luminance"
+  },
+  "language": {
+    "english": "English",
+    "spanish": "Spanish",
+    "french": "French",
+    "arabic": "Arabic",
+    "chinese": "Chinese",
+    "selectLanguage": "Select language"
+  }
 }

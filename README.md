@@ -2,9 +2,11 @@
 
 This is a small sample site using:
 
-- [Vite](https://vitejs.dev/)
-- [FAST](https://www.fast.design/)
-- [TypeScript](https://www.typescriptlang.org/)
+- [FAST](https://www.fast.design)
+- [Fluent UI Web Components](https://learn.microsoft.com/en-us/fluent-ui/web-components)
+- [i18next](https://www.i18next.com)
+- [TypeScript](https://www.typescriptlang.org)
+- [Vite](https://vitejs.dev) 
 
 ### Requirements
 
