@@ -1,5 +1,7 @@
 import { css } from '@microsoft/fast-element';
 
+const settingsHeight = '72px';
+
 const animation = css`
 .animate {
     animation: rotateText 10s linear infinite;
@@ -21,7 +23,7 @@ export const styles = css`
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: calc(100vh - ${settingsHeight});
 }
 
 .circle {

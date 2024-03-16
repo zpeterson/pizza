@@ -16,6 +16,7 @@
     "build": "tsc && vite build"
   },
   "dependencies": {
+    "@fluentui/web-components": "^2.5.17",
     "@microsoft/fast-components": "^2.30.6",
     "@microsoft/fast-element": "^2.0.0-beta.4",
     "@microsoft/fast-foundation": "^3.0.0-alpha.9",

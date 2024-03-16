@@ -1,9 +1,13 @@
 import { html, ref } from "@microsoft/fast-element";
 import { classNames } from '@microsoft/fast-web-utilities';
 
-import { Pizza } from "./pizza";
+import { Pizza } from "./pizza.js";
+import  "../settings/settings.js";
 
 export const template = html<Pizza>`
+<pizza-settings
+    :changeLanguageCallback=${x => x.changeLanguage}
+></pizza-settings>
 <div class="pizza-container">
     <div class="circle">
         <div class="logo"></div>
@@ -13,5 +17,5 @@ export const template = html<Pizza>`
             @click=${x => x.animationClick()}
         ></div>
     </div>
-</div
+</div>
 `;

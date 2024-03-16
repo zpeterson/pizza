@@ -1,3 +1,16 @@
 {
-  "zoeLovesPizza": "زوي تحب البيتزا"
+  "zoeLovesPizza": "زوي تحب البيتزا",
+  "luminance": {
+    "lightMode": "الوضع الفاتح",
+    "darkMode": "الوضع الداكن",
+    "selectLuminance": "اختر الإضاءة"
+  },
+  "language": {
+    "english": "الإنجليزية",
+    "spanish": "الإسبانية",
+    "french": "الفرنسية",
+    "arabic": "العربية",
+    "chinese": "الصينية",
+    "selectLanguage": "اختر اللغة"
+  }
 }

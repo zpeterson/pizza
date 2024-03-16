@@ -1,3 +1,16 @@
 {
-  "zoeLovesPizza": "佐伊爱披萨"
+  "zoeLovesPizza": "佐伊爱披萨",
+  "luminance": {
+    "lightMode": "明亮模式",
+    "darkMode": "暗黑模式",
+    "selectLuminance": "选择亮度"
+  },
+  "language": {
+    "english": "英语",
+    "spanish": "西班牙语",
+    "french": "法语",
+    "arabic": "阿拉伯语",
+    "chinese": "中文",
+    "selectLanguage": "选择语言"
+  }
 }

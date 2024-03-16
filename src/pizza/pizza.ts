@@ -1,13 +1,11 @@
 import { attr, FASTElement } from "@microsoft/fast-element";
+import i18next from "i18next";
 
 import { styles } from "./pizza.styles";
 import { template } from "./pizza.template";
-import i18next from '../index';
 
 export class Pizza extends FASTElement {
     @attr text?: HTMLDivElement;
-
-    @attr lang: string = i18next.language;
 
     @attr animated = true;
 
@@ -31,8 +29,18 @@ export class Pizza extends FASTElement {
         this.animated = !this.animated;
     }
 
+    changeLanguage(lang: string) {
+        // Do nothing if the language is already set
+        if (lang === i18next.language) {
+            return;
+        }
+        i18next.changeLanguage(lang);
+        // Reload page to pull in fresh strings
+        location.reload();
+    }
+
     get degrees() {
-        switch (this.lang) {
+        switch (i18next.language) {
             case 'ar':
                 return 24;
             case 'en':
