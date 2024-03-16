@@ -1,4 +1,4 @@
-import { fluentOption, fluentSelect, fluentSwitch, provideFluentDesignSystem } from '@fluentui/web-components';
+import { fluentOption, fluentSelect, provideFluentDesignSystem } from '@fluentui/web-components';
 import i18next from 'i18next';
 import HttpBackend from 'i18next-http-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
@@ -9,8 +9,7 @@ import { settings } from './settings/settings';
 
 provideFluentDesignSystem().register(
     fluentSelect(),
-    fluentOption(),
-    fluentSwitch()
+    fluentOption()
 );
 
 i18next
