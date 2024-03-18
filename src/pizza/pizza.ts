@@ -15,6 +15,13 @@ export class Pizza extends FASTElement {
         this.addSpans();
     }
 
+    addLanguageElements() {
+        document.documentElement.lang = i18next.language;
+        if (i18next.language === 'ar') {
+            document.body.style.direction = 'rtl';
+        }
+    }
+
     addSpans() {
         const title = i18next.t('zoeLovesPizza');
         for (let i = 0; i < title.length; i++) {
@@ -26,25 +33,8 @@ export class Pizza extends FASTElement {
         }
     }
 
-    addLanguageElements() {
-        document.documentElement.lang = i18next.language;
-        if(i18next.language === 'ar') {
-            document.body.style.direction = 'rtl';
-        }
-    }
-
     animationClick() {
         this.animated = !this.animated;
-    }
-
-    changeLanguage(lang: string) {
-        // Do nothing if the language is already set
-        if (lang === i18next.language) {
-            return;
-        }
-        i18next.changeLanguage(lang);
-        // Reload page to pull in fresh strings and lang settings
-        location.reload();
     }
 
     get degrees() {

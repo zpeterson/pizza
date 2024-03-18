@@ -5,9 +5,7 @@ import { Pizza } from "./pizza.js";
 import  "../settings/settings.js";
 
 export const template = html<Pizza>`
-<pizza-settings
-    :changeLanguageCallback=${x => x.changeLanguage}
-></pizza-settings>
+<pizza-settings></pizza-settings>
 <div class="pizza-container">
     <div class="circle">
         <div class="logo"></div>

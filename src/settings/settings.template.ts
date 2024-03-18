@@ -9,7 +9,7 @@ export const template = html<Settings>`
         title=${_ => i18next.t("luminance.selectLuminance")}
         class="select"
         current-value=${x => x.luminance}
-        @change=${(x, c) => x.changeLuminance((c.event.target as HTMLSelectElement).value)}
+        @change=${(x, c) => x.changeLuminance((c.event.target as HTMLSelectElement))}
     >
         <fluent-option value="light">
             ${_ => i18next.t("luminance.lightMode")}
@@ -22,7 +22,7 @@ export const template = html<Settings>`
         title=${_ => i18next.t("language.selectLanguage")}
         class="select"
         current-value=${_ => i18next.language}
-        @change=${(x, c) => x.changeLanguageCallback?.((c.event.target as HTMLSelectElement).value)}
+        @change=${(x, c) => x.changeLanguage((c.event.target as HTMLSelectElement))}
         >
         <fluent-option value="ar">
             ${_ => i18next.t("language.arabic")}
