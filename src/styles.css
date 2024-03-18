@@ -1,6 +1,7 @@
 * {
   padding: 0;
   margin: 0;
-  font-family: 'Helvetica', 'Segoe UI', Arial, Helvetica, sans-serif;
+  font-family: var(--body-font);
   box-sizing: border-box;
+  background: var(--neutral-fill-rest);
 }

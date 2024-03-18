@@ -11,7 +11,15 @@ export class Pizza extends FASTElement {
 
     connectedCallback() {
         super.connectedCallback();
+        this.addLanguageElements();
         this.addSpans();
+    }
+
+    addLanguageElements() {
+        document.documentElement.lang = i18next.language;
+        if (i18next.language === 'ar') {
+            document.body.style.direction = 'rtl';
+        }
     }
 
     addSpans() {
@@ -27,16 +35,6 @@ export class Pizza extends FASTElement {
 
     animationClick() {
         this.animated = !this.animated;
-    }
-
-    changeLanguage(lang: string) {
-        // Do nothing if the language is already set
-        if (lang === i18next.language) {
-            return;
-        }
-        i18next.changeLanguage(lang);
-        // Reload page to pull in fresh strings
-        location.reload();
     }
 
     get degrees() {
