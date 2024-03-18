@@ -1,14 +1,14 @@
-import { css } from "@microsoft/fast-element";
+import { css } from '@microsoft/fast-element';
 
 export const styles = css`
-.settings-container {
+  .settings-container {
     display: flex;
     justify-content: flex-end;
     padding: 20px;
     gap: 8px;
-}
+  }
 
-.select {
+  .select {
     min-width: 120px;
-}
+  }
 `;
