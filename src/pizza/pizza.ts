@@ -11,6 +11,7 @@ export class Pizza extends FASTElement {
 
     connectedCallback() {
         super.connectedCallback();
+        this.addLanguageElements();
         this.addSpans();
     }
 
@@ -25,6 +26,13 @@ export class Pizza extends FASTElement {
         }
     }
 
+    addLanguageElements() {
+        document.documentElement.lang = i18next.language;
+        if(i18next.language === 'ar') {
+            document.body.style.direction = 'rtl';
+        }
+    }
+
     animationClick() {
         this.animated = !this.animated;
     }
@@ -35,7 +43,7 @@ export class Pizza extends FASTElement {
             return;
         }
         i18next.changeLanguage(lang);
-        // Reload page to pull in fresh strings
+        // Reload page to pull in fresh strings and lang settings
         location.reload();
     }
 

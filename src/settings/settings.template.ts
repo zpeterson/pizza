@@ -5,7 +5,12 @@ import { Settings } from "./settings";
 
 export const template = html<Settings>`
 <div class="settings-container">
-    <fluent-select title=${_ => i18next.t("luminance.selectLuminance")} class="select">
+    <fluent-select
+        title=${_ => i18next.t("luminance.selectLuminance")}
+        class="select"
+        current-value=${x => x.luminance}
+        @change=${(x, c) => x.changeLuminance((c.event.target as HTMLSelectElement).value)}
+    >
         <fluent-option value="light">
             ${_ => i18next.t("luminance.lightMode")}
         </fluent-option>

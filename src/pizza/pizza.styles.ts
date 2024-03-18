@@ -24,6 +24,8 @@ export const styles = css`
   justify-content: center;
   align-items: center;
   min-height: calc(100vh - ${settingsHeight});
+  color: var(--neutral-foreground-rest);
+  background: var(--neutral-fill-rest);
 }
 
 .circle {
