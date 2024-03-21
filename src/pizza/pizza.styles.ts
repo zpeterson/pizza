@@ -37,7 +37,7 @@ export const styles = css`
     align-items: center;
   }
 
-  .logo {
+  .pizza {
     position: absolute;
     width: 350px;
     height: 350px;
