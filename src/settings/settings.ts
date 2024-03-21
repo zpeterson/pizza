@@ -5,7 +5,7 @@ import i18next from 'i18next';
 import { template } from './settings.template';
 import { styles } from './settings.styles';
 
-const luminanceCookie = 'siteLuminance';
+const luminanceCookieName = 'siteLuminance';
 
 type Luminance = 'light' | 'dark';
 
@@ -18,11 +18,8 @@ export class Settings extends FASTElement {
   }
 
   initializeLuminance() {
-    this.luminance = this.luminanceCookie
-      ? (this.luminanceCookie as Luminance)
-      : this.isBrowserDarkMode()
-        ? 'dark'
-        : 'light';
+    const luminanceCookie = this.getLuminanceCookie();
+    this.luminance = luminanceCookie ? (luminanceCookie as Luminance) : this.isBrowserDarkMode() ? 'dark' : 'light';
   }
 
   changeLuminance(e: HTMLSelectElement) {
@@ -59,13 +56,13 @@ export class Settings extends FASTElement {
     const expirationDate = new Date();
     expirationDate.setDate(expirationDate.getDate() + 30);
     // Set the cookie
-    document.cookie = `${luminanceCookie}=${luminance}; expires=${expirationDate.toUTCString()}; path=/`;
+    document.cookie = `${luminanceCookieName}=${luminance}; expires=${expirationDate.toUTCString()}; path=/`;
   }
 
-  get luminanceCookie(): string | undefined {
+  getLuminanceCookie(): string | undefined {
     return document.cookie
       .split('; ')
-      .find(row => row.startsWith(luminanceCookie))
+      .find(row => row.startsWith(luminanceCookieName))
       ?.split('=')[1];
   }
 
