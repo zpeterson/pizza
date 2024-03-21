@@ -7,13 +7,16 @@ import '../settings/settings.js';
 export const template = html<Pizza>`
   <pizza-settings></pizza-settings>
   <div class="pizza-container">
-    <div class="circle">
-      <div class="logo"></div>
-      <div
-        ${ref('text')}
-        class=${x => classNames('text', ['animate', x.animated])}
-        @click=${x => x.animationClick()}
-      ></div>
+    <div
+      class="circle"
+      @click=${x => x.animationClick()}
+      role="button"
+      aria-description="Container for pizza icon and animated text that reads 'Zoë loves pizza'"
+      aria-label=${x => (x.animated ? 'Click to stop the animated text' : 'Click to animate text')}
+      tabindex="0"
+    >
+      <div class="pizza"></div>
+      <div ${ref('text')} class=${x => classNames('text', ['animate', x.animated])}></div>
     </div>
   </div>
 `;
