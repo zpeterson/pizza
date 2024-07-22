@@ -5,8 +5,6 @@ import i18next from 'i18next';
 import { template } from './settings.template';
 import { styles } from './settings.styles';
 
-const luminanceCookieName = 'siteLuminance';
-
 type Luminance = 'light' | 'dark';
 
 export class Settings extends FASTElement {
@@ -18,7 +16,7 @@ export class Settings extends FASTElement {
   }
 
   initializeLuminance() {
-    const luminanceCookie = this.getLuminanceCookie();
+    const luminanceCookie = this.getLuminanceValue();
     this.luminance = luminanceCookie ? (luminanceCookie as Luminance) : this.isBrowserDarkMode() ? 'dark' : 'light';
   }
 
@@ -37,11 +35,11 @@ export class Settings extends FASTElement {
         // Do nothing if the luminance is already set
         return;
       case 'light':
-        this.luminanceCookie = 'light';
+        this.luminanceValue = 'light';
         baseLayerLuminance.setValueFor(document.body, 1);
         break;
       case 'dark':
-        this.luminanceCookie = 'dark';
+        this.luminanceValue = 'dark';
         baseLayerLuminance.setValueFor(document.body, 0);
         break;
     }
@@ -51,19 +49,12 @@ export class Settings extends FASTElement {
     return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
   }
 
-  set luminanceCookie(luminance: Luminance) {
-    // Define the cookie expiration 30 days from now
-    const expirationDate = new Date();
-    expirationDate.setDate(expirationDate.getDate() + 30);
-    // Set the cookie
-    document.cookie = `${luminanceCookieName}=${luminance}; expires=${expirationDate.toUTCString()}; path=/`;
+  set luminanceValue(luminance: Luminance) {
+    localStorage.setItem('luminanceValue', luminance);
   }
 
-  getLuminanceCookie(): string | undefined {
-    return document.cookie
-      .split('; ')
-      .find(row => row.startsWith(luminanceCookieName))
-      ?.split('=')[1];
+  getLuminanceValue(): string | null {
+    return localStorage.getItem('luminanceValue');
   }
 
   changeLanguage(e: HTMLSelectElement) {
